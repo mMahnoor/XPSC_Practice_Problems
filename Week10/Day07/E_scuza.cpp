@@ -17,17 +17,17 @@ int main()
         {
             cin >> a[i];
         }
-        map<int, int> k;
+        multimap<int, int> k;
         for (int i = 0; i < q; i++)
         {
             int val;
             cin >> val;
-            k[val]=i;
+            k.insert(make_pair(val, i));
         }
         long long sum=0;
         int i=0;
         vector<long long> res(q);
-        for (map<int, int>::iterator it = k.begin(); it != k.end(); it++)
+        for (multimap<int, int>::iterator it = k.begin(); it != k.end(); it++)
         {
             while(i<n && it->first>=a[i])
             {
